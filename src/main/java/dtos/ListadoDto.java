@@ -8,12 +8,12 @@ public class ListadoDto {
     private String estado;
     private String sedeNombre;
     private String ciudad;
-    private int mesesOperativos;
+    private String mesesOperativos;
 
     public ListadoDto() {
     }
 
-    public ListadoDto(int idEquipo, String hostname, String tipo, String ipGestion, String estado, String sedeNombre, String ciudad, int mesesOperativos) {
+    public ListadoDto(int idEquipo, String hostname, String tipo, String ipGestion, String estado, String sedeNombre, String ciudad, String mesesOperativos) {
         this.idEquipo = idEquipo;
         this.hostname = hostname;
         this.tipo = tipo;
@@ -80,11 +80,11 @@ public class ListadoDto {
         this.ciudad = ciudad;
     }
 
-    public int getMesesOperativos() {
+    public String getMesesOperativos() {
         return mesesOperativos;
     }
 
-    public void setMesesOperativos(int mesesOperativos) {
+    public void setMesesOperativos(String mesesOperativos) {
         this.mesesOperativos = mesesOperativos;
     }
 }

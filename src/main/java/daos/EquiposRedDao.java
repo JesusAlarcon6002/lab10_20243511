@@ -11,7 +11,7 @@ public class EquiposRedDao extends BaseDao{
         ArrayList<ListadoDto> lista = new ArrayList<>();
 
         String sql = "SELECT e.id_equipo, e.hostname, e.tipo, e.ip_gestion, e.estado, s.nombre AS 'Sede', s.ciudad, fecha_alta FROM equipos_red AS e" +
-                " INNER JOIN sedes s ON e.id_sede = sedes.id_sede;";
+                " INNER JOIN sedes s ON e.id_sede = s.id_sede;";
 
         try(Connection conn = this.getConnection();
             Statement stmt = conn.createStatement();
@@ -24,17 +24,15 @@ public class EquiposRedDao extends BaseDao{
                 dto.setTipo(rs.getString("tipo"));
                 dto.setIpGestion(rs.getString("ip_gestion"));
                 dto.setEstado(rs.getString("estado"));
-                dto.setSedeNombre(rs.getString("nombre"));
+                dto.setSedeNombre(rs.getString("Sede"));
                 dto.setCiudad(rs.getString("ciudad"));
-                dto.getMesesOperativos(rs.getString("fecha_alta"));
-
+                dto.setMesesOperativos(rs.getString("fecha_alta"));
+                lista.add(dto);
             }
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-
-
         return  lista;
     }
 }
