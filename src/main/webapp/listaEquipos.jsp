@@ -27,6 +27,16 @@
             <th>ciudad</th>
             <th>Meses</th>
         </tr>
+        <% for (ListadoDto lista : listadoDtos){%>
+        <th><%=lista.getIdEquipo()%></th>
+        <th><%=lista.getHostname()%></th>
+        <th><%=lista.getTipo()%></th>
+        <th><%=lista.getIpGestion()%></th>
+        <th><%=lista.getEstado()%></th>
+        <th><%=lista.getSedeNombre()%></th>
+        <th><%=lista.getCiudad()%></th>
+        <th><%=lista.getMesesOperativos()%></th>
+        <%}%>
     </table>
 </body>
 </html>
